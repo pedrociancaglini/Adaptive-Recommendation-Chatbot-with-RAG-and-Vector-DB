@@ -9,7 +9,7 @@ from collections import OrderedDict
 # Load environment variables from .env file
 load_dotenv()
 
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"#os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
 # Load the PDF
 loader = PyPDFLoader("fashion_data.pdf")  # Provide your PDF path here
