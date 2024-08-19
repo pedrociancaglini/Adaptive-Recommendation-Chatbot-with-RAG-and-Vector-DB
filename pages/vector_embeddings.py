@@ -12,7 +12,7 @@ load_dotenv()
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
 # Load the PDF
-loader = PyPDFLoader("2020-Scrum-Guide-US.pdf") #("fashion_data.pdf")  # Provide your PDF path here
+loader = PyPDFLoader("peter_ciank.pdf") #("fashion_data.pdf")  # Provide your PDF path here
 documents = loader.load()
 
 # Split the text
