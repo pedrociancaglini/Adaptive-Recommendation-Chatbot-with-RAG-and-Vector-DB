@@ -5,6 +5,7 @@ from langchain.vectorstores import Chroma
 import os
 from dotenv import load_dotenv
 from collections import OrderedDict
+import streamlit as st
 
 # Load environment variables from .env file
 load_dotenv()
@@ -25,9 +26,9 @@ embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-Mi
 # Convert texts to embeddings
 try:
     embeddings = embedding_model.embed_documents([doc.page_content for doc in texts])
-    print("Vector Embeddings created successfully")
+    st.write("Vector Embeddings created successfully")
 except Exception as e:
-    print(f"Error creating vector embeddings: {e}")
+    st.write(f"Error creating vector embeddings: {e}")
 
 # Initialize Chroma vector store
 vector_store = Chroma(embedding_function=embedding_model, persist_directory="data")
@@ -49,6 +50,6 @@ try:
 
     # Convert unique results to a list and limit to top 3
     final_results = list(unique_results.values())[:3]
-    print(f"Unique query results: {final_results}")
+    st.write(f"Unique query results: {final_results}")
 except Exception as e:
-    print(f"Error during test query: {e}")
+    st.write(f"Error during test query: {e}")
