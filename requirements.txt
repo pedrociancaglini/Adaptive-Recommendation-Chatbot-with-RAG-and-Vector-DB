@@ -7,4 +7,4 @@ langchain==0.2.5
 langchain-community==0.2.5
 langchain-huggingface==0.0.3
 python-dotenv
-sqlite3==3.35.0
+sqlite3
